@@ -1,0 +1,274 @@
+@keyframes rgb {
+    0% { color: red; }
+    33% { color: green; }
+    66% { color: blue; }
+    100% { color: red; }
+}
+
+body {
+    background-image: url('phone.png'), url('phone.png'), url('phone.png'), linear-gradient(royalblue 0%, white 10%, white 80%, gold 100%);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: left top, right top, bottom left, center;
+    text-align: center;
+}
+
+body > p:first-of-type {
+    font-size: 14pt;
+    font-weight: bold;
+    color: darkgreen;
+    visibility: hidden;
+}
+
+body > p:first-of-type > span {
+    font-size: 16pt;
+    color: royalblue;
+    text-shadow: 0 0 3px, 0 0 5px yellow;
+    animation-name: rgb;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+.tablename {
+    font-size: 16pt;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tablename > span {
+    color: purple;
+    font-size: 18pt;
+    letter-spacing: 5px;
+}
+
+.numbers {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    border: royalblue 3px solid;
+    background-image: white, radial-gradient(red 5%, yellow 15%, green 60%);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center center;
+}
+
+.numbers:hover {
+    box-shadow: 4px 4px 3px gold;
+}
+
+.numbers > div {
+    display: table-row;
+}
+
+.numbers > div:nth-child(even):not(:last-child) {
+    background-color: lightgreen;
+}
+
+.numbers:hover > div:last-child > div:nth-child(3) {
+    color: purple;
+    text-decoration: underline;
+    text-decoration-color: darkblue;
+    text-decoration-style: double;
+}
+
+.numbers:not(:hover) > div:not(:last-child) > div:nth-child(3) {
+    background-color: lightblue;
+    text-transform: uppercase;
+}
+
+.numbers:hover > div:not(:last-child) {
+    background: initial;
+}
+
+.numbers > div:not(:last-child):hover > :nth-child(2) {
+    text-decoration: underline;
+    text-decoration-color: darkgreen;
+    text-decoration-style: double;
+}
+
+.numbers > div:not(:last-child):hover > :nth-child(3) {
+    color: purple;
+    text-transform: uppercase;
+}
+
+.numbers > div:not(:last-child) > :nth-child(3) {
+    color: darkblue;
+    font-weight: bold;
+    transition: all .25s ease-out;
+}
+
+.numbers > div:not(:last-child) > :nth-last-child(2) {
+    font-weight: bold;
+}
+
+.numbers > div:not(:last-child):hover {
+    background-color: rgba(255,  255,  0, .6);
+}
+
+.numbers > div:not(:last-child):hover > :nth-last-child(2) {
+    text-align: center;
+    letter-spacing: 3px;
+    color: darkgreen;
+    text-shadow: 0 0 3px, 0 0 3px #E0E0E0;
+}
+
+.numbers > div:not(:last-child) > :first-child {
+    font-weight: bold;
+    text-align: right;
+    color: royalblue;
+}
+
+.numbers > div:not(:last-child):hover > :first-child {
+    color: brown;
+    font-style: italic;
+}
+
+.numbers > div:not(:last-child) > :last-child > :only-child {
+    visibility: hidden;
+}
+
+.numbers > div:not(:last-child):hover > :last-child > :only-child {
+    visibility: visible;
+}
+
+.numbers > div:not(:last-child) > :last-child {
+    text-align: center;
+}
+
+.numbers > div:last-child {
+    font-weight: bold;
+    text-align: center;
+    background-color: lightblue;
+}
+
+.numbers > div > div {
+    display: table-cell;
+    padding: 5px;
+}
+
+.landline  {
+    cursor: url("landline.cur"), pointer;
+}
+
+.landline:hover  {
+    background-image: url('landline.png'), radial-gradient(gold 15%, lightgreen 30%, lightblue 60%);
+}
+
+.mobile  {
+    cursor: url("mobile.cur"), pointer;
+}
+
+.mobile:hover  {
+    background-image: url('mobile.png'), radial-gradient(gold 15%, lightgreen 30%, lightblue 60%);
+}
+
+fieldset {
+    text-align: center;
+    margin-top: 16px;
+}
+
+fieldset:hover > legend {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+fieldset:hover [type=submit] {
+    animation-play-state: running;
+}
+
+fieldset [type=submit] {
+    width: 240px;
+    color: darkgreen;
+    font-weight: bold;
+    font-size: 16pt;
+    letter-spacing: 3px;
+    animation-name: rgb;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: paused;
+}
+
+fieldset > form > div {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset > form > div > div {
+    display: table-row;
+}
+
+fieldset > form > div > div > div {
+    display: table-cell;
+    padding: 5px;
+}
+
+fieldset > form > div > div > div:first-child {
+    text-align: right;
+    font-weight: bold;
+    color: darkblue;
+    transition: all .5s ease-out;
+}
+
+fieldset > form > div > div:hover > div:first-child {
+    color: darkgreen;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: white;
+    cursor: default;
+    font-size: 32pt;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 8px;
+    text-shadow: 0px 0px 5px #A0A0A0;
+    -webkit-text-stroke: 1px blueviolet;
+    transition: all 3s ease-out;
+}
+
+h1:hover {
+    color: yellow;
+    letter-spacing: 16px;
+}
+
+body > p:last-of-type {
+    cursor: default;
+    font-size: 14pt;
+    text-align: right;
+    font-weight: bold;
+}
+
+body > p:last-of-type > :last-child {
+    color: purple;
+    font-size: 16pt;
+}
+
+[type=text] {
+    color: blueviolet;
+    text-align: center;
+    font-weight: bold;
+}
+
+[placeholder]  {
+    font-size: 18pt;
+    font-size: 18pt;
+    letter-spacing: 5px;
+    color: darkgreen;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-color: blueviolet;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 2px, 0 0 2px yellow;
+}
+
+[placeholder]:not(:focus) {
+    color: blueviolet;
+    border-color: darkgreen;
+}
+
