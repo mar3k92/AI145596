@@ -124,7 +124,7 @@ spis.handleAddResponse = function() {
   alert(`Wprowadzony numer został sklasyfikowany jako numer ${n[r.table]} oraz pomyślnie DODANY do tabeli \`${r.table}\` bazy danych.\nOczekuję na kolejny :)`);
   with (spis) {
    newNumbers.push(document.forms[0].number.value);
-   refreshNumbers(); // reset after refreshing
+   refreshNumbers();
    setTimeout(resetForm, 5000);
   }
  }

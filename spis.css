@@ -317,11 +317,12 @@ h1 {
     transition: all 3s ease-out;
 }
 
-h1:not(:hover) > :first-child {
-    visibility: hidden;
+h1 button {
+    transition: all 1.5s ease-out;
 }
 
 h1:not(:hover) button {
+    opacity: 0.25;
     animation-play-state: paused;
 }
 
