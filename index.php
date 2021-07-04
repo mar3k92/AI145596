@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="spis.css" type="text/css" />
+    <link rel="stylesheet" href="print.css" type="text/css" media="print" />
     <script type="text/javascript" src="spis.js"></script>
   </head>
   <body>

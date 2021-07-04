@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'mar3k';
+	src: url('Mar3k-style3.ttf');
+}
+
 @keyframes rgb {
     0% { color: red; }
     33% { color: green; }
@@ -5,11 +10,32 @@
     100% { color: red; }
 }
 
+@keyframes bshadow {
+    0% { box-shadow: 4px 4px 3px orange; }
+    24% { box-shadow: 3px -3px 3px gold; }
+    40% { box-shadow: -3px -3px 3px gold; }
+    74% { box-shadow: -3px 3px 3px orange; }
+    100% { box-shadow: 4px 4px 3px orange; }
+}
+
+@keyframes new {
+    50% { background-color: yellow; }
+}
+
+@keyframes bcolor {
+    50% { border-color: red; }
+}
+
 body {
-    background-image: url('phone.png'), url('phone.png'), url('phone.png'), linear-gradient(royalblue 0%, white 10%, white 80%, gold 100%);
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-position: left top, right top, bottom left, center;
+    background-image: url('phone.png'), url('phone3.png'), url('phone2.png'), url('telephone.png'), url('book.png'), linear-gradient(royalblue 0%, white 20%, white 80%, gold 100%);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: left top, right top, bottom left, 5% 50%, 95% 50%, center;
+    font-family: Verdana, Latin Modern Sans;
     text-align: center;
+}
+
+body.m {
+    background-image: url('phone.png'), url('phone3.png'), url('mobile.png'), url('telephone.png'), url('book.png'), linear-gradient(royalblue 0%, white 20%, white 80%, gold 100%);
 }
 
 body > p:first-of-type {
@@ -24,7 +50,7 @@ body > p:first-of-type > span {
     color: royalblue;
     text-shadow: 0 0 3px, 0 0 5px yellow;
     animation-name: rgb;
-    animation-duration: 2s;
+    animation-duration: 6s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-play-state: running;
@@ -42,6 +68,32 @@ body > p:first-of-type > span {
     letter-spacing: 5px;
 }
 
+.numbers:empty {
+    width: 300px;
+    height: 150px;
+    animation-name: bcolor;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+.landline:empty {
+    background-image: url('heart2.png');
+}
+
+.mobile:empty {
+    background-image: url('heart1.png');
+}
+
+.numbers:not(:hover) > .newnumber {
+    animation-name: new;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
 .numbers {
     display: table;
     margin-left: auto;
@@ -54,7 +106,11 @@ body > p:first-of-type > span {
 }
 
 .numbers:hover {
-    box-shadow: 4px 4px 3px gold;
+    animation-name: bshadow;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
 }
 
 .numbers > div {
@@ -65,11 +121,19 @@ body > p:first-of-type > span {
     background-color: lightgreen;
 }
 
+.numbers:not(:hover) > div > div:last-child {
+    display: none;
+}
+
 .numbers:hover > div:last-child > div:nth-child(3) {
     color: purple;
     text-decoration: underline;
     text-decoration-color: darkblue;
     text-decoration-style: double;
+}
+
+.numbers > div:last-child > div:last-child {
+    color: darkred;
 }
 
 .numbers:not(:hover) > div:not(:last-child) > div:nth-child(3) {
@@ -96,6 +160,30 @@ body > p:first-of-type > span {
     color: darkblue;
     font-weight: bold;
     transition: all .25s ease-out;
+}
+
+.landline > div:not(:last-child) > :nth-last-child(2) > span {
+    color: darkblue;
+}
+
+.landline > div:not(:last-child) > :nth-last-child(2) > span:first-of-type {
+    color: darkgreen;
+}
+
+.landline > div:not(:last-child) > :nth-last-child(2) > span:nth-of-type(2) {
+    color: purple;
+}
+
+.mobile > div:not(:last-child) > :nth-last-child(2) > span:first-of-type {
+    color: darkred;
+}
+
+.mobile > div:not(:last-child) > :nth-last-child(2) > span:nth-of-type(2) {
+    color: darkgreen;
+}
+
+.mobile > div:not(:last-child) > :nth-last-child(2) > span:last-of-type {
+    color: darkblue;
 }
 
 .numbers > div:not(:last-child) > :nth-last-child(2) {
@@ -151,7 +239,7 @@ body > p:first-of-type > span {
     cursor: url("landline.cur"), pointer;
 }
 
-.landline:hover  {
+.landline:not(:empty):hover  {
     background-image: url('landline.png'), radial-gradient(gold 15%, lightgreen 30%, lightblue 60%);
 }
 
@@ -159,7 +247,7 @@ body > p:first-of-type > span {
     cursor: url("mobile.cur"), pointer;
 }
 
-.mobile:hover  {
+.mobile:not(:empty):hover  {
     background-image: url('mobile.png'), radial-gradient(gold 15%, lightgreen 30%, lightblue 60%);
 }
 
@@ -184,7 +272,7 @@ fieldset [type=submit] {
     font-size: 16pt;
     letter-spacing: 3px;
     animation-name: rgb;
-    animation-duration: 3s;
+    animation-duration: 9s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-play-state: paused;
@@ -229,6 +317,28 @@ h1 {
     transition: all 3s ease-out;
 }
 
+h1:not(:hover) > :first-child {
+    visibility: hidden;
+}
+
+h1:not(:hover) button {
+    animation-play-state: paused;
+}
+
+h1 button {
+    font-size: 12pt;
+    letter-spacing: 3px;
+    animation-name: rgb;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+h1 > :nth-child(2) {
+    font-size: 44pt;
+}
+
 h1:hover {
     color: yellow;
     letter-spacing: 16px;
@@ -241,15 +351,31 @@ body > p:last-of-type {
     font-weight: bold;
 }
 
+body > p:last-of-type > :not(:last-child) {
+    font-family: mar3k;
+    font-size: 18pt;
+}
+
+body > p:last-of-type > :nth-child(2) {
+    font-size: 24pt;
+}
+
 body > p:last-of-type > :last-child {
     color: purple;
     font-size: 16pt;
+}
+
+body > p:last-of-type:hover span {
+    color: darkblue;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 [type=text] {
     color: blueviolet;
     text-align: center;
     font-weight: bold;
+    letter-spacing: 3px;
 }
 
 [placeholder]  {

@@ -1,0 +1,4 @@
+fieldset, [placeholder], p:first-of-type, p:last-of-type {
+    display: none;
+}
+
